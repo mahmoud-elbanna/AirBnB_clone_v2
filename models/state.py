@@ -15,9 +15,9 @@ class State(BaseModel, Base):
     if getenv('HBNB_TYPE_STORAGE') != 'db':
         @property
         def cities(self):
-             """cities getter in case of using file storage"""
-             from models.city import City
-             from models import storage
+            """cities getter in case of using file storage"""
+            from models.city import City
+            from models import storage
             cities_list = []
             for city in storage.all(City).values():
                 if city.state_id == self.id:
